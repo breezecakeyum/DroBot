@@ -24,7 +24,7 @@ bot.on('ready', function() {
 bot.on('message', function(user, userID, channelID, message, event) {
     if (message === "!logs") {
         bot.sendMessage({
-            to: 244143840963854337,
+            to: channel,
             message: "Reign of Fire Logs >>> https://www.warcraftlogs.com/guilds/5151\nArea 52 Emerald Nightmare Logs >>> https://www.warcraftlogs.com/rankings/server/18/10\nEmerald Nightmare 95% Logs >>> https://www.warcraftlogs.com/statistics/10#dataset=95"
         });
     }
