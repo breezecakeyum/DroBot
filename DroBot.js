@@ -20,12 +20,12 @@ bot.on('ready', function() {
     console.log(bot.username + " - (" + bot.id + ")");
 });	
 
-
+//Text Bounce
 bot.on('message', function(user, userID, channelID, message, event) {
-    if (message === "ping") {
+    if (message === "!logs") {
         bot.sendMessage({
-            to: channelID,
-            message: "pong"
+            to: 244143840963854337,
+            message: "Reign of Fire Logs >>> https://www.warcraftlogs.com/guilds/5151\nArea 52 Emerald Nightmare Logs >>> https://www.warcraftlogs.com/rankings/server/18/10\nEmerald Nightmare 95% Logs >>> https://www.warcraftlogs.com/statistics/10#dataset=95"
         });
     }
 	if (message === "lol"){
@@ -36,64 +36,64 @@ bot.on('message', function(user, userID, channelID, message, event) {
 	}
 });
 
-bot.on('any', function(channelID, rawEvent) {
-    if (channelID === 244132831662440451) {
-		var arr = ['beep1.jpg', 'beep2.jpg', 'beep3.jpg'];
-		var i = 0; 
+// bot.on('any', function(channelID, rawEvent) {
+    // if (channelID === 244132831662440451) {
+		// var arr = ['beep1.jpg', 'beep2.jpg', 'beep3.jpg'];
+		// var i = 0; 
 		
-		while (i < arr.length){
-			var intervalID = setInterval (function (){
-				bot.sendMessage({to: channelID, message: arr[i]});
+		// while (i < arr.length){
+			// var intervalID = setInterval (function (){
+				// bot.sendMessage({to: channelID, message: arr[i]});
 				// sendFiles(channelID, [arr[i]]);
-				i++;
-			}, 10000);
-		}
+				// i++;
+			// }, 10000);
+		// }
 		
-		i = 0;
-    }
-});
+		// i = 0;
+    // }
+// });
 
-bot.on('message', function(user, userID, channelID, message, rawEvent) {
-	var currentTime = new Date().toLocaleTimeString('en-US', {hour12:true});
-	var estTime = Moment().tz(currentTime, "America/New_York");
+// bot.on('message', function(user, userID, channelID, message, rawEvent) {
+	// var currentTime = new Date().toLocaleTimeString('en-US', {hour12:true});
+	// var estTime = Moment().tz(currentTime, "America/New_York");
 	
-    if (message === "!start") {
-      var intervalID = setInterval (function (){
-		sendFiles(channelID, ["clock.png"]);
+    // if (message === "!start") {
+      // var intervalID = setInterval (function (){
+		// sendFiles(channelID, ["clock.png"]);
 		
-		bot.sendMessage({
-			to: channelID,
-			message: "Current EST time is: " + estTime
-		});	
-		bot.sendMessage({
-			to: channelID,
-			message: "Current Dronai time is: " + currentTime
-		});
-      }, 10000);
-    }
-	else if (message === "!stop"){
-		clearInterval(intervalID);
-	}
-});
+		// bot.sendMessage({
+			// to: channelID,
+			// message: "Current EST time is: " + estTime
+		// });	
+		// bot.sendMessage({
+			// to: channelID,
+			// message: "Current Dronai time is: " + currentTime
+		// });
+      // }, 10000);
+    // }
+	// else if (message === "!stop"){
+		// clearInterval(intervalID);
+	// }
+// });
 
 //Display Current Time and Locale time
-bot.on('message', function(user, userID, channelID, message, rawEvent) {
-	var currentTime = new Date().toLocaleTimeString('en-US', {hour12:true});
-	var estTime = Moment().tz(currentTime, "America/New_York");
+// bot.on('message', function(user, userID, channelID, message, rawEvent) {
+	// var currentTime = new Date().toLocaleTimeString('en-US', {hour12:true});
+	// var estTime = Moment().tz(currentTime, "America/New_York");
 	
-    if (message === "!time") {
-		sendFiles(channelID, ["clock.png"]);
+    // if (message === "!time") {
+		// sendFiles(channelID, ["clock.png"]);
 		
-		bot.sendMessage({
-			to: channelID,
-			message: "Current EST time is: " + estTime
-		});	
-		bot.sendMessage({
-			to: channelID,
-			message: "Current Dronai time is: " + currentTime
-		});
-    }
-});
+		// bot.sendMessage({
+			// to: channelID,
+			// message: "Current EST time is: " + estTime
+		// });	
+		// bot.sendMessage({
+			// to: channelID,
+			// message: "Current Dronai time is: " + currentTime
+		// });
+    // }
+// });
 
 // bot.on("message", function(user, userID, channelID, message, event) {
     // if (message === "!Live") {
