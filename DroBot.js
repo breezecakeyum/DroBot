@@ -1,5 +1,6 @@
 var Moment = require('moment-timezone');
 var Discord = require('discord.io');
+fs = require('fs');
 
 
 var bot = new Discord.Client({
@@ -70,6 +71,21 @@ bot.on('message', function(user, userID, channelID, message, event) {
 		});
 	}	
 });
+
+bot.on('message', function(user, userID, channelID, message, event) {
+	if (message === "!test"){
+		fs.writeFile('drobot\\text\\text.txt', message.replace('!test','') ,function(err){
+			if (err) return console.log(err);
+			else{
+				bot.sendMessage({
+					to: channelID, 
+					message: "```Test Completed```"
+				});
+			};
+		});
+	}
+});
+	
 
 // Obviously a function to send files
 function sendFiles(channelID, fileArr, interval) {
