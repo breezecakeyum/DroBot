@@ -54,7 +54,7 @@
   "dependencies": {
     "cjopus": "0.0.2",
     "tweetnacl": "^0.14.0",
-    "ws": "^1.1.0"
+    "ws": ">=3.3.1"
   },
   "description": "JavaScript interface for Discord.",
   "devDependencies": {},
